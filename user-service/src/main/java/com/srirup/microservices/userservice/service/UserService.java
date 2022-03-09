@@ -61,6 +61,7 @@ public class UserService implements IUserService {
 			result = userRepository.findById(userId);
 		} catch (Exception e) {
 			log.error(e.getMessage());
+			throw new ResourceNotFoundException("User not found for this user id ::" + userId);
 		}
 		if(result.isPresent()) {
 			userRepository.deleteById(userId);

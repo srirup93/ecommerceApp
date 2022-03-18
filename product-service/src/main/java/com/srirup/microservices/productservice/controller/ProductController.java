@@ -40,7 +40,7 @@ public class ProductController {
 	
 	@GetMapping(params = "name")
 	public ResponseEntity<List<Product>> getAllProductsByName(@RequestParam ("name") String name) {
-		List<Product> products = productService.getAllProductByCategory(name);
+		List<Product> products = productService.getAllProductsByName(name);
 		return ResponseEntity.ok().body(products);
 	}
 	
